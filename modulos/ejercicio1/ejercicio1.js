@@ -72,7 +72,7 @@ const procesarAsincronoConPromesa = (solicitud) => {
         setTimeout(() => {
             // Regla de negocio: Si el tipo es 'urgente' y la prioridad es baja (< 8), la Promesa se rechaza.
             if (solicitud.tipoSolicitud.toLowerCase() === 'urgente' && solicitud.prioridad < 8) {
-                reject("Fallo: Solicitud Urgente necesita prioridad alta.");
+                reject("Fallo: Solicitud Urgente necesita prioridad alta, mayor o igual a 8.");
             } else {
                 // Si la lógica es válida, la Promesa se resuelve con el mensaje de éxito.
                 resolve("Exito: La solicitud de " + solicitud.nombre + " fue procesada.");
